@@ -19,17 +19,21 @@ export class ProductUpdateComponent implements OnInit {
   constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id:any = this.route.snapshot.paramMap.get('id');
+    const id: any = this.route.snapshot.paramMap.get('id');
     this.productService.readById(id).subscribe(product => {
       this.product = product;
     });
   }
 
   updateProduct(): void {
-    this.productService.update(this.product).subscribe(() => {
-      this.productService.showMessage('Produto atualizado com sucesso!');
-      this.router.navigate(['/products']);
-    })
+    if (this.product.name != '' && this.product.price) {
+      this.productService.update(this.product).subscribe(() => {
+        this.productService.showMessage('Produto atualizado com sucesso!');
+        this.router.navigate(['/products']);
+      })
+    }else{
+      this.productService.showMessage("preencha todos os campos para atualizar o produto", true);
+    }
 
   }
 
