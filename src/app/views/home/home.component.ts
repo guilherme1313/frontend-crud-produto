@@ -1,5 +1,6 @@
 import { HeaderService } from './../../components/template/header/header.service';
 import { Component, OnInit } from '@angular/core';
+import { CalendarOptions } from '@fullcalendar/angular';
 
 @Component({
   selector: 'app-home',
@@ -18,5 +19,19 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  calendarOptions: CalendarOptions = {
+    headerToolbar: {
+      left: 'dayGridMonth',
+      center: 'title',
+      right: 'prev,next today'
+    },
+    initialView: 'dayGridMonth',
+    weekends: true,
+    editable: true,
+    selectable: true,
+    selectMirror: true,
+    dayMaxEvents: true
+  };
 
 }

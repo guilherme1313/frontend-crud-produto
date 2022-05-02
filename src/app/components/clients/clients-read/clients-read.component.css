@@ -1,6 +1,12 @@
-table{
+table {
     width: 100%;
-}
+  }
+
+ .tabela{
+     margin-top: 20px;
+ } 
+
+
 .edit{
     margin-right: 10px;
 }

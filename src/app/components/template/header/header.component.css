@@ -17,3 +17,22 @@ max-height: 32px;
 .header .title-group i{
     padding-right: 5px;
 }
+
+.navbar{
+    justify-content: space-between;
+}
+
+.logo{
+    padding-left: 30px;
+}
+
+
+.botao{
+   
+  justify-items: end;
+}
+
+.spacer {
+    flex : 1  1 auto;
+ }
+

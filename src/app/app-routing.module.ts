@@ -1,3 +1,7 @@
+import { ClientsDeleteComponent } from './components/clients/clients-delete/clients-delete.component';
+import { ClientsUpdateComponent } from './components/clients/clients-update/clients-update.component';
+import { ClientsCreateComponent } from './components/clients/clients-create/clients-create.component';
+import { ClientsCrudComponent } from './views/clients-crud/clients-crud.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 
@@ -26,6 +30,22 @@ component: ProductCrudComponent
 {
   path: "products/delete/:id",
   component: ProductDeleteComponent
+},
+{
+  path: "clients",
+  component: ClientsCrudComponent
+},
+{
+  path: "clients/create",
+  component: ClientsCreateComponent
+},
+{
+  path: "clients/edit/:id",
+  component: ClientsUpdateComponent
+},
+{
+  path: "clients/delete/:id",
+  component: ClientsDeleteComponent
 }
 ];
 

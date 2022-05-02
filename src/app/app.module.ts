@@ -34,7 +34,20 @@ import {registerLocaleData} from '@angular/common';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 import { ToastrModule } from 'ngx-toastr';
-
+import { ClientsCreateComponent } from './components/clients/clients-create/clients-create.component';
+import { ClientsCrudComponent } from './views/clients-crud/clients-crud.component';
+import { ClientsReadComponent } from './components/clients/clients-read/clients-read.component';
+import { ClientsUpdateComponent } from './components/clients/clients-update/clients-update.component';
+import { ClientsDeleteComponent } from './components/clients/clients-delete/clients-delete.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; 
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 registerLocaleData(localePt);
 @NgModule({
   declarations: [
@@ -50,7 +63,12 @@ registerLocaleData(localePt);
     ProductReadComponent,
     ProductRead2Component,
     ProductUpdateComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
+    ClientsCreateComponent,
+    ClientsCrudComponent,
+    ClientsReadComponent,
+    ClientsUpdateComponent,
+    ClientsDeleteComponent
     
   ],
   imports: [
@@ -70,7 +88,10 @@ registerLocaleData(localePt);
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    FullCalendarModule,
+    MatGridListModule,
+    MatIconModule
   ],
   providers: [{
     provide: LOCALE_ID,

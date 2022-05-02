@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-title>Atualizar dados do Cliente</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome"  [(ngModel)]="clients.name" name="name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Email" type="email"  [(ngModel)]="clients.email"  name="email">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Telefone"  type="tel"  [(ngModel)]="clients.telefone" maxlength="15" name="telefone">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput  placeholder="CPF" type="text"  [(ngModel)]="clients.cpf"  name="cpf">
+        </mat-form-field>
+
+        
+    </form>
+    <button mat-raised-button (click)="updateClients()"  color="primary">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
+
