@@ -44,6 +44,11 @@ import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
 import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
+import { InicioComponent } from './views/inicio/inicio.component';
+import { AuthenticationComponent } from './views/authentication/authentication.component';
+import { LoginComponent } from './account/login/login.component';
+import { CreateAccountComponent } from './account/create-account/create-account.component';
+import {httpInterceptorProviders} from './http-interceptors';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin
@@ -68,7 +73,11 @@ registerLocaleData(localePt);
     ClientsCrudComponent,
     ClientsReadComponent,
     ClientsUpdateComponent,
-    ClientsDeleteComponent
+    ClientsDeleteComponent,
+    InicioComponent,
+    AuthenticationComponent,
+    LoginComponent,
+    CreateAccountComponent
     
   ],
   imports: [
@@ -91,12 +100,15 @@ registerLocaleData(localePt);
     ToastrModule.forRoot(),
     FullCalendarModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    
   ],
   providers: [{
     provide: LOCALE_ID,
     useValue: 'pt-BR'
-  }],
+  },
+  httpInterceptorProviders
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

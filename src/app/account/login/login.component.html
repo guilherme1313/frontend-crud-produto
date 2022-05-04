@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-title class="center">Login</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="E-mail" type="email"   [(ngModel)]="login.email" name="email" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Senha" type="password"  [(ngModel)]="login.password"  name="senha" required>
+        </mat-form-field> 
+    </form>
+    <button mat-raised-button class="entrar" (click)="onSubmit()"  color="primary">
+        Entrar
+    </button>
+    <button mat-raised-button class="criar-conta" [routerLink]="['/create-account']">
+        Criar conta
+    </button>
+</mat-card>
+
+
+
+
+
+
+
+
+
+

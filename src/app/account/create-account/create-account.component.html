@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-title class="center">Criar nova conta</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" type="text"   [(ngModel)]="create.nome" name="nome" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="E-mail" type="email"   [(ngModel)]="create.email" name="email" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Senha" type="password"  [(ngModel)]="create.senha"  name="senha" required>
+        </mat-form-field> 
+    </form>
+    <button mat-raised-button class="criar" (click)="onSubmit()"  color="primary">
+        Criar conta
+    </button>
+    <button mat-raised-button class="login" [routerLink]="['/login']">
+        Logar
+    </button>
+</mat-card>

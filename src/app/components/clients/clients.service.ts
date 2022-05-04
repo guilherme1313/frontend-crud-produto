@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 })
 export class ClientsService {
 
-  baseUrl =  environment.clientsURL;
+  baseUrl = `${environment.api}/clients/`;
  
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }

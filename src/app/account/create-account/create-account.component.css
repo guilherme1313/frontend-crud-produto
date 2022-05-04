@@ -1,0 +1,20 @@
+form{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    margin: 20px 15px 0px 0px;
+    width: 100%;
+}
+
+.login:hover{
+background-color: rgb(151, 149, 149);
+}
+
+.criar:hover{
+    background-color: green;
+}
+
+.center{
+    text-align: center;
+}

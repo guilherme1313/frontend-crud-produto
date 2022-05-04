@@ -12,7 +12,7 @@ import { Observable, EMPTY } from 'rxjs';
 })
 export class ProductService {
 
-  baseUrl = environment.productoURL;
+  baseUrl =  `${environment.api}/products/`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
