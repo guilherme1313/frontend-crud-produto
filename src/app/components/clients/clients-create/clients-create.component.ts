@@ -25,7 +25,7 @@ export class ClientsCreateComponent implements OnInit {
   createClients(): void{
     if (this.clients.name != '' && this.clients.email != '' && this.clients.telefone != '' && this.clients.cpf != '') {
       this.clientsService.create(this.clients).subscribe(() => {
-        this.clientsService.showMessage('Produto cadastrado!');
+        this.clientsService.showMessage('Cliente cadastrado!');
         this.router.navigate(['/clients']);
       })
     }else{

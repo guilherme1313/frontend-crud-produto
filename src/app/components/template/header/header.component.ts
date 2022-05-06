@@ -25,4 +25,9 @@ export class HeaderComponent implements OnInit {
     return this.headerService.headerData.routeUrl
   }
 
+  removeToken(){
+    localStorage.removeItem('token');
+    this.headerService.showMessage("Usuario deslogado com sucesso");
+  }
+
 }

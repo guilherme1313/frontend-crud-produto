@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { HeaderData } from './header-data.model';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
@@ -13,7 +14,7 @@ export class HeaderService {
     routeUrl: ''
   })
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
   get headerData(): HeaderData{
     return this._headerData.value;
@@ -21,5 +22,14 @@ export class HeaderService {
 
   set headerData(headerData: HeaderData){
     this._headerData.next(headerData);
+  }
+
+  showMessage(msg: string, isError: boolean = false): void {
+    this.snackBar.open(msg, 'X', {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: isError ? ['msg-error'] : ['msg-success']
+    });
   }
 }

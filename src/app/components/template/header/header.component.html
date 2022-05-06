@@ -1,5 +1,5 @@
 <mat-toolbar class="header mat-elevation-z4" >
-  
+   <a routerLink="/inicio"> </a>
    
         <span class="title-group logo">
             <a routerLink="{{routeUrl}}">
@@ -11,7 +11,7 @@
         </span>
 
         <span class="spacer"></span>
-        <button mat-icon-button >
+        <button mat-icon-button (click)="removeToken()" routerLink="login">
          <mat-icon>logout</mat-icon>
         </button>
 
